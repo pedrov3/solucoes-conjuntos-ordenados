@@ -18,6 +18,7 @@ typedef vector<int> vi;
 
 mt19937 rng((int)chrono::steady_clock::now().time_since_epoch().count());
 
+// from: https://github.com/brunomaletta/Biblioteca/blob/master/Codigo/Grafos/kuhn.cpp
 struct kuhn {
   int n, m;
   vector<vector<short int>> g;

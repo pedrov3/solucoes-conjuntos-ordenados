@@ -29,22 +29,9 @@ void db(It b, It e) {
   cout << endl;
 }
 
-// Kuhn
-//
-// Computa matching maximo em grafo bipartido
-// 'n' e 'm' sao quantos vertices tem em cada particao
-// chamar add(i, j) para add aresta entre o cara i
-// da particao A, e o cara j da particao B
-// (entao i < n, j < m)
-// Para recuperar o matching, basta olhar 'ma' e 'mb'
-// 'recover' recupera o min vertex cover como um par de
-// {caras da particao A, caras da particao B}
-//
-// O(|V| * |E|)
-// Na pratica, parece rodar tao rapido quanto o Dinic
-
 mt19937 rng((int)chrono::steady_clock::now().time_since_epoch().count());
 
+// from: https://github.com/brunomaletta/Biblioteca/blob/master/Codigo/Grafos/kuhn.cpp
 struct kuhn {
   int n, m;
   vector<vector<int>> g;

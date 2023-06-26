@@ -108,14 +108,10 @@ vector<vi> reducaoTransitiva(vector<vi> &adj) {
   // adj_scc
   map<int, int> id;
   for (auto &u : nodos_raiz) {
-    //  if (!id.count(u)) id[u] = id.size();
     for (auto &v : adj_scc[u]) {
-      // if (!id.count(v)) id[v] = id.size();
-      // g1[id[u]][id[v]] = 1;
       g1[u][v] = 1;
     }
     if (sz[u] > 1 || (sz[u] == 1 && g2[u][u])) {
-      // g1[id[u]][id[u]] = 1;
       g1[u][u] = 1;
     }
   }
@@ -127,7 +123,7 @@ vector<vi> reducaoTransitiva(vector<vi> &adj) {
     g2[i][i] = 0;
   }
 
-  // Fecho transitivo - usando floyd-warshall
+  //TODO: Fecho transitivo - usando floyd-warshall
   vector<vector<int>> g2T(MAX, vector<int>(MAX, 0));
   vector<vector<int>> dist(MAX, vector<int>(MAX, 0));
   for (auto &x : dist)

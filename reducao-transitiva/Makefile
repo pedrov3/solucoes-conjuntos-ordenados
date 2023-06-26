@@ -8,9 +8,7 @@ CXXFLAGS = -Wall -Wextra -O2 --static -std=c++17
 
 all: main
 
-
 main: main.cpp util.o
-
 
 util.o: util.hpp util.cpp
 
